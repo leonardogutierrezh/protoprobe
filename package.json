@@ -1,0 +1,50 @@
+{
+  "name": "protoprobe",
+  "version": "0.0.1",
+  "description": "Local-first usability testing for HTML prototypes. Task metrics, heatmaps and reports — all data stays on your machine.",
+  "license": "MIT",
+  "author": "Leo Gutierrez",
+  "type": "module",
+  "bin": {
+    "protoprobe": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-assets.mjs",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "example": "npm run build && node dist/cli.js serve examples/basic"
+  },
+  "keywords": [
+    "usability-testing",
+    "ux-research",
+    "prototype",
+    "html",
+    "local-first",
+    "heatmap",
+    "user-testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardogutierrezh/protoprobe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leonardogutierrezh/protoprobe/issues"
+  },
+  "homepage": "https://github.com/leonardogutierrezh/protoprobe#readme",
+  "dependencies": {
+    "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.0"
+  }
+}

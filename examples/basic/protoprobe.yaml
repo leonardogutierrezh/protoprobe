@@ -1,0 +1,21 @@
+study: Acme marketing site — pricing discoverability
+consent: >
+  We'll record your clicks and navigation on this prototype to improve it.
+  No video, audio or typed text is stored. Data stays on this computer.
+maskInputs: true
+
+tasks:
+  - id: find-pro-price
+    prompt: Find out how much the Pro plan costs per month.
+    start: /index.html
+    success:
+      visible: "#pro-price"
+    timeLimitSec: 90
+    expectedPath: [/index.html, /pricing.html]
+
+  - id: find-analytics
+    prompt: Which plan includes team analytics?
+    start: /index.html
+    success:
+      url: /features.html
+    timeLimitSec: 90
